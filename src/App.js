@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import "./App.css";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Product from "./components/Product";
+import Default from "./components/Default";
+import Details from "./components/Details";
+import Cart from "./components/Cart";
+import LogIn from "./components/LogIn";
+import CreateAccount from "./components/CreateAccount";
+import { ProductContext } from "./components/Context";
 
 function App() {
+  const value = useContext(ProductContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          {value.auth ? <Redirect to="/products" /> : <LogIn />}
+        </Route>
+        <Route exact path="/createaccount" component={CreateAccount} />
+        <Route exact path="/products" component={Product} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/details/:slug" component={Details} />
+        <Route component={Default} />
+      </Switch>
+    </React.Fragment>
   );
 }
 
