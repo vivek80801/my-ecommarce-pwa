@@ -315,6 +315,9 @@ hr {
   border-top: 2px dashed #00f;
   margin: 1rem 0;
 }
+.hide {
+  display: none;
+}
 @media (max-width: 800px) {
   .products {
     display: grid;

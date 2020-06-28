@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "./Context";
 import ModelForUserName from "./ModelForUserName";
+import Pwa from "./Pwa";
 
 const LogIn = () => {
   const value = useContext(ProductContext);
@@ -11,6 +12,7 @@ const LogIn = () => {
       <div className="contain">
         <div className="container">
           <ModelForUserName />
+          <Pwa />
           <span
             style={{
               color: "var(--lightRed)",
