@@ -3,7 +3,7 @@
 what is a PWA ?.  PWA is a website 
 thats also works. when user gets offline. In this is dummy E-commerce website. I did not added slider. I did not added offers.
 
-[Dummy Ecommerce website](https://nostalgic-northcutt-15fdc6.netlify.app/ "Dummy Ecommerce website")
+Go Live: [Dummy Ecommerce website](https://nostalgic-northcutt-15fdc6.netlify.app/ "Dummy Ecommerce website")
 
 # Willing to work on this Project
 If you wish. we will make this dummy ecommerce site just for learning purposes. You can fork. 
