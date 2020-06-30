@@ -13,6 +13,7 @@ const cacheAssets = [
   "/static/js/main.41b70167.chunk.js",
   "/static/css/main.a9521b40.chunk.css",
   "/static/js/runtime-main.272c8f49.js",
+  "/static/js/main.80c86b7b.chunk.js",
   "/img/macaroni1.jpg",
   "/img/macaroni2.jpg",
   "/img/pasta1.jpg",
@@ -20,6 +21,7 @@ const cacheAssets = [
   "/img/pasta3.jpg",
   "/img/phofi.jpg",
   "/img/plate.jpg",
+  "/img/not-found.jpg",
 ];
 // call install event
 self.addEventListener("install", (e) => {
