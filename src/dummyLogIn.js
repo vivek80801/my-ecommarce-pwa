@@ -35,4 +35,10 @@ export const persons = [
     password: "mona",
     email: "mona@gmail.com",
   },
+  {
+    id: 7,
+    name: "ram",
+    password: "ram",
+    email: "ram@gmail.com",
+  },
 ];
