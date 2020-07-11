@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { persons } from "../dummyLogIn";
-import { ProductContext } from "./Context";
+import { ProductContext } from "../Context/Context";
 
 const ModelForUserName = () => {
   const value = useContext(ProductContext);

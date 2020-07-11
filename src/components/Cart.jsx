@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-
-import { ProductContext } from "./Context";
+import { ProductContext } from "../Context/Context";
 import ThankYou from "./ThankYou";
 
 const Cart = () => {
@@ -152,4 +151,5 @@ const Cart = () => {
     );
   }
 };
+
 export default Cart;

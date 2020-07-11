@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import ProductList from "./ProductList";
-import { ProductContext } from "./Context";
+import { ProductContext } from "../Context/Context";
 
 const Product = () => {
   const value = useContext(ProductContext);

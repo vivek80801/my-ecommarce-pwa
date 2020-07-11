@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "./Context";
+import { ProductContext } from "../Context/Context";
 
 const Navbar = () => {
   const value = useContext(ProductContext);
@@ -12,11 +12,19 @@ const Navbar = () => {
         </div>
         <nav>
           <ul>
-            <li>
-              <Link to="/">
-                <h1>Home</h1>
-              </Link>
-            </li>
+            {!value.auth ? (
+              <li>
+                <Link to="/">
+                  <h1>Home</h1>
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/">
+                  <h1>Products</h1>
+                </Link>
+              </li>
+            )}
             {value.auth ? (
               <li>
                 <Link to="/cart">

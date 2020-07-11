@@ -42,7 +42,7 @@ export const ProductProvider = (props) => {
     const ids1 = [...ids];
     const find = ids1.filter((i) => i !== id);
     setIds(new Set([...find]));
-  };
+  }; 
 
   const handleUserName = (e) => {
     setUserName(e.target.value);

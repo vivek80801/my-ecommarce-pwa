@@ -8,7 +8,7 @@ import Details from "./components/Details";
 import Cart from "./components/Cart";
 import LogIn from "./components/LogIn";
 import CreateAccount from "./components/CreateAccount";
-import { ProductContext } from "./components/Context";
+import { ProductContext } from "./Context/Context";
 
 function App() {
   const value = useContext(ProductContext);
