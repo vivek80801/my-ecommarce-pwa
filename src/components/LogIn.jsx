@@ -19,7 +19,7 @@ const LogIn = () => {
     <React.Fragment>
       {!loading ? (
         <div>
-          <h1>LOADING......</h1>
+          <h1>Loading........</h1>
         </div>
       ) : (
         <div className="contain">

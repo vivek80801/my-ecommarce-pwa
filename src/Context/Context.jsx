@@ -17,6 +17,7 @@ export const ProductProvider = (props) => {
   const [newPassword, setNewPassword] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isRotated, SetIsrotated] = useState(false);
 
   const handleAddToCart = (slug) => {
     products.forEach((i) => {
@@ -42,7 +43,7 @@ export const ProductProvider = (props) => {
     const ids1 = [...ids];
     const find = ids1.filter((i) => i !== id);
     setIds(new Set([...find]));
-  }; 
+  };
 
   const handleUserName = (e) => {
     setUserName(e.target.value);
@@ -125,7 +126,7 @@ export const ProductProvider = (props) => {
     setRedirect(false);
   };
 
-  const handleModelUserInfo = (params) => {
+  const handleModelUserInfo = () => {
     setModeUserInfo(false);
   };
 
@@ -133,6 +134,9 @@ export const ProductProvider = (props) => {
     setModeUserInfo(true);
   };
 
+  const handleRotate = () => {
+    SetIsrotated(!isRotated);
+  };
   return (
     <ProductContext.Provider
       value={{
@@ -147,6 +151,7 @@ export const ProductProvider = (props) => {
         newPassword: newPassword,
         redirect: redirect,
         modelUserInfo: modelUserInfo,
+        isRotated: isRotated,
         handleRedirect: handleRedirect,
         renderRedirect: renderRedirect,
         handleAddToCart: handleAddToCart,
@@ -163,6 +168,7 @@ export const ProductProvider = (props) => {
         handleLogout: handleLogout,
         handleModelUserInfo: handleModelUserInfo,
         handlePay: handlePay,
+        handleRotate: handleRotate,
       }}
     >
       {props.children}

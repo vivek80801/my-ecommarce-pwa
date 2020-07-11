@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="logo">
           <h1>LOGO</h1>
         </div>
-        <nav>
+        <nav className="desktop">
           <ul>
             {!value.auth ? (
               <li>
@@ -45,7 +45,52 @@ const Navbar = () => {
             )}
           </ul>
         </nav>
+        <nav
+          className={value.isRotated ? "rotate-mobile" : "mobile"}
+          onClick={value.handleRotate}
+        >
+          <div className={value.isRotated ? "line-one-move" : "line-one"}></div>
+          <div className={value.isRotated ? "line-two-move" : "line-two"}></div>
+          <div
+            className={value.isRotated ? "line-three-move" : "line-three"}
+          ></div>
+        </nav>
       </header>
+      <div className={value.isRotated ? "drop-down active" : "drop-down"}>
+        <ul>
+          {!value.auth ? (
+            <li>
+              <Link to="/">
+                <h1>Home</h1>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/">
+                <h1>Products</h1>
+              </Link>
+            </li>
+          )}
+          {value.auth ? (
+            <li>
+              <Link to="/cart">
+                <h1>Cart</h1>
+              </Link>
+            </li>
+          ) : (
+            ""
+          )}
+          {value.auth ? (
+            <li onClick={value.handleLogout}>
+              <Link to="/">
+                <h1>Log Out</h1>
+              </Link>
+            </li>
+          ) : (
+            ""
+          )}
+        </ul>
+      </div>
     </React.Fragment>
   );
 };
