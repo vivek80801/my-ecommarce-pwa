@@ -35,6 +35,15 @@ const Navbar = () => {
               ""
             )}
             {value.auth ? (
+              <li>
+                <Link to="/adminlogin">
+                  <h1>Admin</h1>
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
+            {value.auth ? (
               <li onClick={value.handleLogout}>
                 <Link to="/">
                   <h1 title="are you sure?">Log Out</h1>
@@ -75,6 +84,15 @@ const Navbar = () => {
             <li>
               <Link to="/cart">
                 <h1>Cart</h1>
+              </Link>
+            </li>
+          ) : (
+            ""
+          )}
+          {value.auth ? (
+            <li>
+              <Link to="/adminlogin">
+                <h1>Admin</h1>
               </Link>
             </li>
           ) : (

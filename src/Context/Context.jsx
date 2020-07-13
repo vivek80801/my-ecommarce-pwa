@@ -2,6 +2,7 @@ import React, { useState, createContext } from "react";
 import { Redirect } from "react-router-dom";
 import { productItems } from "../data";
 import { persons } from "../dummyLogIn";
+import { admins } from "../Admin";
 
 export const ProductContext = createContext();
 
@@ -18,6 +19,11 @@ export const ProductProvider = (props) => {
   const [newEmail, setNewEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isRotated, SetIsrotated] = useState(false);
+  const [change, setChange] = useState(0);
+  const [edit, setEdit] = useState(false);
+  const [adminAuth, setAdminAuth] = useState(false);
+  const [authName, setAuthName] = useState("");
+  const [authPassword, setAuthPassword] = useState("");
 
   const handleAddToCart = (slug) => {
     products.forEach((i) => {
@@ -36,6 +42,8 @@ export const ProductProvider = (props) => {
     const find = products.filter((product) => product.id === id);
     if (find[0].count > 1) {
       find[0].count -= 1;
+    } else {
+      handleDelete(id);
     }
     setProducts([...products]);
   };
@@ -77,6 +85,62 @@ export const ProductProvider = (props) => {
       setMessage("");
     }, 2500);
   };
+  const handleAdmin = (e) => {
+    e.preventDefault();
+    setMessage("");
+    admins.map((admin) =>
+      admin.name === authName && admin.password === authPassword
+        ? setAdminAuth(true)
+        : setMessage("You are not an admin")
+    );
+    setTimeout(() => {
+      setMessage("");
+    }, 2500);
+    console.log(adminAuth)
+  };
+  const handleAuthName = (e) => {
+    setAuthName(e.target.value);
+  };
+  const handleAuthPassword = (e) => {
+    setAuthPassword(e.target.value);
+  };
+
+  const handleEditPrice = (id, e) => {
+    setChange({
+      id,
+      price: parseFloat(e.target.value),
+    });
+  };
+
+  const handleSavePrice = (id) => {
+    if (id === change.id) {
+      products.forEach((product) => {
+        if (id === product.id) {
+          if (!isNaN(change.price)) {
+            console.log(change.price);
+            product.price = change.price;
+            product.total = change.price;
+            setMessage("Price changed");
+          }
+        }
+      });
+    }
+    setTimeout(() => {
+      setMessage("");
+    }, 2000);
+    setEdit({
+      id,
+      edit: false,
+    });
+  };
+
+  const handleEdit = (id) => {
+    setEdit({
+      id,
+      edit: true,
+    });
+  };
+
   const handleCreateAccount = (e) => {
     e.preventDefault();
     setMessage("");
@@ -152,6 +216,11 @@ export const ProductProvider = (props) => {
         redirect: redirect,
         modelUserInfo: modelUserInfo,
         isRotated: isRotated,
+        change: change,
+        edit: edit,
+        adminAuth: adminAuth,
+        authName: authName,
+        authPassword: authPassword,
         handleRedirect: handleRedirect,
         renderRedirect: renderRedirect,
         handleAddToCart: handleAddToCart,
@@ -169,6 +238,12 @@ export const ProductProvider = (props) => {
         handleModelUserInfo: handleModelUserInfo,
         handlePay: handlePay,
         handleRotate: handleRotate,
+        handleEditPrice: handleEditPrice,
+        handleSavePrice: handleSavePrice,
+        handleEdit: handleEdit,
+        handleAdmin: handleAdmin,
+        handleAuthName: handleAuthName,
+        handleAuthPassword: handleAuthPassword,
       }}
     >
       {props.children}
