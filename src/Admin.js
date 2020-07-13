@@ -8,6 +8,6 @@ export const admins = [
     id: 2,
     name: "root",
     password: "root",
-    email: "vivek@gmail.com",
+    email: "root@gmail.com",
   },
 ];

@@ -25,9 +25,9 @@ function App() {
         <Route exact path="/products" component={Product} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/details/:slug" component={Details} />
-        <Route exact path="/adminlogin" component={AdminLogIn} />
-        <Route exact path="/admin">
-          {!value.adminAuth ? <Redirect to="/adminlogin" /> : <Admin />}
+        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/adminlogin">
+          {value.adminAuth ? <Redirect to="/admin" /> : <AdminLogIn />}
         </Route>
         <Route component={Default} />
       </Switch>

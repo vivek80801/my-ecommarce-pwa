@@ -30,6 +30,7 @@ const AdminLogIn = () => {
             </span>
             <h1>Admin</h1>
             <form onSubmit={value.handleAdmin}>
+              <span>{value.adminAuth}</span>
               <label htmlFor="UserName">
                 <span>AdminName:</span>
                 <input

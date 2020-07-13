@@ -95,8 +95,7 @@ export const ProductProvider = (props) => {
     );
     setTimeout(() => {
       setMessage("");
-    }, 2500);
-    console.log(adminAuth)
+    }, 500);
   };
   const handleAuthName = (e) => {
     setAuthName(e.target.value);
@@ -179,6 +178,7 @@ export const ProductProvider = (props) => {
     setMessage("You are logged out");
     setUserName("");
     setPassword("");
+    setAdminAuth(false)
     setIds([]);
     setAuth(!auth);
     setTimeout(() => {
