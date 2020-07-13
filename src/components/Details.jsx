@@ -12,7 +12,7 @@ const Details = (props) => {
           <React.Fragment key={i.id}>
             <div className="hero-image">
               <img src={i.img} alt="hero" />
-              <p>{i.des}</p>
+              <p title="this is dummy data">{i.des}</p>
             </div>
             <div className="contain">
               <Link to="/cart">

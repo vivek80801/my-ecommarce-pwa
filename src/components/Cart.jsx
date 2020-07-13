@@ -85,6 +85,7 @@ const Cart = () => {
                       <button
                         className="btn"
                         onClick={() => value.handleDelete(product.id)}
+                        title="are you sure to delete?"
                       >
                         Delete
                       </button>
@@ -116,6 +117,7 @@ const Cart = () => {
                       <button
                         className="btn"
                         onClick={() => value.handleDelete(product.id)}
+                        title="are you sure to delete?"
                       >
                         Delete
                       </button>
@@ -135,7 +137,11 @@ const Cart = () => {
           ))}
           <div className="total">
             <h1>Total:</h1>
-            <button className="btn" onClick={value.handlePay}>
+            <button
+              className="btn"
+              onClick={value.handlePay}
+              title="dummy payment"
+            >
               Pay
             </button>
             <h2>$ {Math.floor(output * 100) / 100}</h2>

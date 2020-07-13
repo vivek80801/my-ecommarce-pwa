@@ -7,6 +7,7 @@ const cacheAssets = [
   "/logo192.png",
   "/manifest.json",
   "/static/js/0.chunk.js",
+  "/static/js/1.chunk.js",
   "/static/js/bundle.js",
   "/static/js/main.chunk.js",
   "/static/js/2.87831dbc.chunk.js",

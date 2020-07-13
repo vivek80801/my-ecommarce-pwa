@@ -17,7 +17,11 @@ const ThankYou = () => {
         Thank You for visiting!
         <br />
         <Link to="/">
-          <button className="btn" onClick={value.handleLogout}>
+          <button
+            className="btn"
+            onClick={value.handleLogout}
+            title="are you sure"
+          >
             Log out
           </button>
         </Link>

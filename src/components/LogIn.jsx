@@ -57,9 +57,9 @@ const LogIn = () => {
                 />{" "}
               </label>{" "}
               <br />
-              <input type="submit" value="Log In" />
+              <input type="submit" value="Log In" title="log in" />
             </form>
-            <Link to="/createaccount">
+            <Link to="/createaccount" title="we don't save your data">
               <button className="btn" onClick={value.handleRedirect}>
                 Create Account
               </button>

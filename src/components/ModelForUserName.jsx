@@ -12,7 +12,7 @@ const ModelForUserName = () => {
       <button className="btn closebtn" onClick={value.handleModelUserInfo}>
         &times;
       </button>
-      <h1>Here is user information. You may need it to log in</h1>
+      <h1>Here is user information. You will need it to log in</h1>
       {persons.map((i) => (
         <div className="model-users-info-data" key={i.id}>
           UserName : {i.name}. <br />

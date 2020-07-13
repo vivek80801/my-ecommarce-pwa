@@ -21,6 +21,7 @@ header {
   top: 0;
   position: sticky;
   display: flex;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   background-color: var(--mainBlue);
@@ -129,12 +130,15 @@ nav > ul > li > a {
 .hero-image > img {
   height: 60vh;
   width: 60vw;
-  cursor: pointer;
+  cursor:unset;
   border-radius: 0.75rem;
 }
+.hero-image > p{
+ padding-top: 1.25rem;
+}
 .cart-image > img {
-  height: 30vh;
-  width: 30vh;
+  height: 10vh;
+  width: 9vw;
   padding: 0.75rem;
   box-shadow: -3px -3px 5px rgb(78, 74, 74), 3px 3px 5px rgb(214, 208, 208);
 }
@@ -163,7 +167,7 @@ nav > ul > li > a {
   color: #fff;
   font-size: 1.05rem;
   font-weight: bold;
-  width: 1rem;
+  width: 100vw;
   border-radius: 40%;
   padding: 0.75rem;
   margin: 0.75rem;
@@ -244,6 +248,7 @@ input[type="submit"]:hover {
 .total {
   background-color: var(--mainWhite);
   position: sticky;
+  width: 100vw;
   bottom: 0;
   display: flex;
   justify-content: space-between;
@@ -287,12 +292,9 @@ input[type="submit"]:hover {
   background-color: var(--mainWhite);
 }
 .cart-details {
-  width: vh;
+  width: 100vw;
   display: none;
   background-color: var(--mainWhite);
-}
-.cart-image-mobile {
-  display: none;
 }
 .cart-image-mobile > img {
   display: block;
@@ -319,7 +321,8 @@ hr {
   display: none;
 }
 .cart-image-mobile {
-  display: flex;
+  display: none;
+  width: 100vw;
   flex-direction: column;
 }
 .line-one,
@@ -360,12 +363,15 @@ hr {
   transition: ease-in all 1s;
 }
 .rotate-mobile {
-  cursor: pointer;
+  cursor: pointer;position: absolute;
+  right: 1vh;
   transform: rotateZ(180deg);
   transition: ease-in all 1s;
 }
 .mobile {
   display: none;
+  position: absolute;
+  right: 1vh;
   transform: rotateZ(0deg);
   transition: ease-in all 1s;
   cursor: pointer;
@@ -423,7 +429,7 @@ hr {
     display: none;
   }
   .cart-image-mobile {
-    display: block;
+    display: flex;
   }
   .btn {
     display: block;
@@ -442,5 +448,8 @@ hr {
   }
   .desktop {
     display: none;
+  }
+  .hero-image> p{
+    width: 40vw;
   }
 }
