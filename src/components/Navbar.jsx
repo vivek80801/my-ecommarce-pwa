@@ -44,6 +44,15 @@ const Navbar = () => {
               ""
             )}
             {value.auth ? (
+              <li>
+                <Link to="/usersprofile">
+                  <h1>Edit Profile</h1>
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
+            {value.auth ? (
               <li onClick={value.handleLogout}>
                 <Link to="/">
                   <h1 title="are you sure?">Log Out</h1>

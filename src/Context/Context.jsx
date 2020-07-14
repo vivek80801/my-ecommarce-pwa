@@ -11,7 +11,7 @@ export const ProductProvider = (props) => {
   const [ids, setIds] = useState(new Set());
   const [auth, setAuth] = useState(false);
   const [redirect, setRedirect] = useState(false);
-  const [modelUserInfo, setModeUserInfo] = useState(true);
+  const [modelUserInfo, setModeUserInfo] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [newUserName, setNewUserName] = useState("");
@@ -20,6 +20,7 @@ export const ProductProvider = (props) => {
   const [message, setMessage] = useState("");
   const [isRotated, SetIsrotated] = useState(false);
   const [change, setChange] = useState(0);
+  const [changeDes, setChangeDes] = useState("");
   const [edit, setEdit] = useState(false);
   const [adminAuth, setAdminAuth] = useState(false);
   const [authName, setAuthName] = useState("");
@@ -111,22 +112,25 @@ export const ProductProvider = (props) => {
     });
   };
 
+  const handleEditDes = (id, e) => {
+    setChangeDes({
+      id,
+      des: e.target.value,
+    });
+  };
+
   const handleSavePrice = (id) => {
-    if (id === change.id) {
+    if (id === change.id || id === changeDes.id) {
       products.forEach((product) => {
         if (id === product.id) {
-          if (!isNaN(change.price)) {
-            console.log(change.price);
+          if (!isNaN(change.price) && changeDes !== "") {
             product.price = change.price;
             product.total = change.price;
-            setMessage("Price changed");
+            product.des = changeDes.des;
           }
         }
       });
     }
-    setTimeout(() => {
-      setMessage("");
-    }, 2000);
     setEdit({
       id,
       edit: false,
@@ -178,7 +182,7 @@ export const ProductProvider = (props) => {
     setMessage("You are logged out");
     setUserName("");
     setPassword("");
-    setAdminAuth(false)
+    setAdminAuth(false);
     setIds([]);
     setAuth(!auth);
     setTimeout(() => {
@@ -221,6 +225,7 @@ export const ProductProvider = (props) => {
         adminAuth: adminAuth,
         authName: authName,
         authPassword: authPassword,
+        changeDes: changeDes,
         handleRedirect: handleRedirect,
         renderRedirect: renderRedirect,
         handleAddToCart: handleAddToCart,
@@ -244,6 +249,7 @@ export const ProductProvider = (props) => {
         handleAdmin: handleAdmin,
         handleAuthName: handleAuthName,
         handleAuthPassword: handleAuthPassword,
+        handleEditDes: handleEditDes,
       }}
     >
       {props.children}

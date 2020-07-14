@@ -130,11 +130,11 @@ nav > ul > li > a {
 .hero-image > img {
   height: 60vh;
   width: 60vw;
-  cursor:unset;
+  cursor: unset;
   border-radius: 0.75rem;
 }
-.hero-image > p{
- padding-top: 1.25rem;
+.hero-image > p {
+  padding-top: 1.25rem;
 }
 .cart-image > img {
   height: 10vh;
@@ -364,7 +364,8 @@ hr {
   transition: ease-in all 1s;
 }
 .rotate-mobile {
-  cursor: pointer;position: absolute;
+  cursor: pointer;
+  position: absolute;
   right: 1vh;
   transform: rotateZ(180deg);
   transition: ease-in all 1s;
@@ -382,12 +383,38 @@ hr {
 }
 .drop-down.active {
   display: block;
+  position: sticky;
+  top: 3rem;
   background-color: var(--mainBlue);
   color: #fff;
 }
 .drop-down.active > ul > li > a {
   color: #fff;
   text-decoration: none;
+}
+.change {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.75rem;
+  box-shadow: inset -3px -3px 5px rgb(78, 74, 74),
+    inset 3px 3px 5px rgb(214, 208, 208);
+}
+.edit-admin {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 0.75rem;
+}
+.edit-admin > img {
+  height: 10vh;
+  width: 9vw;
+  padding: 0.75rem;
+  box-shadow: -3px -3px 5px rgb(78, 74, 74), 3px 3px 5px rgb(214, 208, 208);
 }
 @media (max-width: 1150px) {
   .products {
@@ -450,7 +477,7 @@ hr {
   .desktop {
     display: none;
   }
-  .hero-image> p{
+  .hero-image > p {
     width: 40vw;
   }
 }

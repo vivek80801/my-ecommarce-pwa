@@ -15,7 +15,18 @@ const Cart = () => {
     )
   );
 
-  if (value.ids.size <= 0) {
+  if (!value.auth) {
+    return (
+      <>
+        <h1>
+          You are not logged in.
+          <Link to="/">
+            <button className="btn">Log In</button>
+          </Link>
+        </h1>
+      </>
+    );
+  } else if (value.ids.size <= 0) {
     return (
       <React.Fragment>
         <h1>Nothing is in Your Cart.</h1>

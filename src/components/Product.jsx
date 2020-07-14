@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ProductList from "./ProductList";
 import { ProductContext } from "../Context/Context";
@@ -9,18 +9,22 @@ const Product = () => {
     <React.Fragment>
       {value.auth ? (
         <React.Fragment>
-          <h1>
-            Our <strong>Products</strong>{" "}
+          <h1 style={{ textTransform: "capitalize" }}>
+            welcome {value.userName}
           </h1>
+          <h2>
+            Our <strong>Products</strong>{" "}
+          </h2>
           <div className="products">
             <ProductList />
           </div>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <h1>You are not logged in.
+          <h1>
+            You are not logged in.
             <Link to="/">
-            <button className="btn">Log In</button>
+              <button className="btn">Log In</button>
             </Link>
           </h1>
         </React.Fragment>

@@ -9,8 +9,9 @@ import Details from "./components/Details";
 import Cart from "./components/Cart";
 import LogIn from "./components/LogIn";
 import CreateAccount from "./components/CreateAccount";
-import AdminLogIn from "./components/AdminLogIn";
-import Admin from "./components/Admin";
+import AdminLogIn from "./Admin/AdminLogIn";
+import Admin from "./Admin/Admin";
+import UsersProfile from "./users/UsersProfile";
 
 function App() {
   const value = useContext(ProductContext);
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/details/:slug" component={Details} />
         <Route exact path="/admin" component={Admin} />
+        <Route exact path="/usersprofile" component={UsersProfile} />
         <Route exact path="/adminlogin">
           {value.adminAuth ? <Redirect to="/admin" /> : <AdminLogIn />}
         </Route>

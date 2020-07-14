@@ -28,7 +28,7 @@ const AdminLogIn = () => {
             >
               {value.message}
             </span>
-            <h1>Admin</h1>
+            <h1>Admin Log In </h1>
             <form onSubmit={value.handleAdmin}>
               <span>{value.adminAuth}</span>
               <label htmlFor="UserName">

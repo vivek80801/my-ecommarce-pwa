@@ -16,12 +16,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
+    <div id="admin-area"></div>
     <script>
       if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () =>{
-          navigator.serviceWorker.register("sw.js")
-        })
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js");
+        });
       }
     </script>
   </body>
