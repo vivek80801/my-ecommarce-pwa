@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { persons } from "../dummyLogIn";
 import { ProductContext } from "../Context/Context";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,17 @@ const UsersProfile = () => {
     <>
       {value.auth ? (
         <>
-          
+          <h1>My Profile</h1>
+          <div>
+            <span> Name: {value.userName}</span>
+            <span> Password: {value.password}</span>
+            <span>
+              Email:{" "}
+              {persons.map((person) =>
+                person.name === value.userName ? person.email : ""
+              )}
+            </span>
+          </div>
         </>
       ) : (
         <>
