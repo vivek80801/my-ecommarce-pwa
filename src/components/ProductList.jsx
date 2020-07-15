@@ -1,17 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../Context/Context";
+import loading from "../Hoc/loading";
 
-const ProductList = () => {
+const ProductList = ({ loading }) => {
   const value = useContext(ProductContext);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    return () => {
-      setLoading(false);
-    };
-  }, [loading]);
 
   return (
     <React.Fragment>
@@ -38,4 +31,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default loading(ProductList);

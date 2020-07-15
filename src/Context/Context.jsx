@@ -14,6 +14,7 @@ export const ProductProvider = (props) => {
   const [modelUserInfo, setModeUserInfo] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [newUserName, setNewUserName] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newEmail, setNewEmail] = useState("");
@@ -82,6 +83,9 @@ export const ProductProvider = (props) => {
         ? setAuth(true)
         : setMessage("You have enter wrong email or password");
     }
+    persons.map((person) =>
+      person.name === userName ? setEmail(person.email) : ""
+    );
     setTimeout(() => {
       setMessage("");
     }, 2500);
@@ -205,6 +209,15 @@ export const ProductProvider = (props) => {
   const handleRotate = () => {
     SetIsrotated(!isRotated);
   };
+  const handleUserEmail = (e) => {
+    if (e.target.value !== "") {
+      setEmail(e.target.value);
+    }
+  };
+  const handleSaveUser = () => {
+    setEdit(false)
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -226,6 +239,7 @@ export const ProductProvider = (props) => {
         authName: authName,
         authPassword: authPassword,
         changeDes: changeDes,
+        email: email,
         handleRedirect: handleRedirect,
         renderRedirect: renderRedirect,
         handleAddToCart: handleAddToCart,
@@ -250,6 +264,8 @@ export const ProductProvider = (props) => {
         handleAuthName: handleAuthName,
         handleAuthPassword: handleAuthPassword,
         handleEditDes: handleEditDes,
+        handleUserEmail: handleUserEmail,
+        handleSaveUser: handleSaveUser,
       }}
     >
       {props.children}

@@ -1,18 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../Context/Context";
+import loading from "../Hoc/loading";
 import Pwa from "./Pwa";
 
-const LogIn = () => {
+const LogIn = ({loading}) => {
   const value = useContext(ProductContext);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    return () => {
-      setLoading(false);
-    };
-  }, [loading]);
 
   return (
     <React.Fragment>
@@ -69,4 +62,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default loading(LogIn);

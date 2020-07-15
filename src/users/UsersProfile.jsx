@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { persons } from "../dummyLogIn";
 import { ProductContext } from "../Context/Context";
 import { Link } from "react-router-dom";
 
@@ -10,15 +9,33 @@ const UsersProfile = () => {
       {value.auth ? (
         <>
           <h1>My Profile</h1>
-          <div>
+          <div className="user-profile">
             <span> Name: {value.userName}</span>
+            <span>Email: {value.email}</span>
             <span> Password: {value.password}</span>
-            <span>
-              Email:{" "}
-              {persons.map((person) =>
-                person.name === value.userName ? person.email : ""
-              )}
-            </span>
+            <div>
+              <button
+                className={!value.edit.edit ? "btn" : "hide"}
+                onClick={value.handleEdit}
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+          <div className={value.edit.edit ? "edit-user" : "hide"}>
+            <label htmlFor="name">
+              Name: <input type="text" onChange={value.handleUserName} />
+            </label>
+            <label htmlFor="email">
+              Email: <input type="email" onChange={value.handleUserEmail} />
+            </label>
+            <label htmlFor="password">
+              Password:{" "}
+              <input type="password" onChange={value.handlePassword} />
+            </label>
+            <button className="btn" onClick={value.handleSaveUser}>
+              Save
+            </button>
           </div>
         </>
       ) : (

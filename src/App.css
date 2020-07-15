@@ -416,6 +416,22 @@ textarea {
   padding: 0.75rem;
   box-shadow: -3px -3px 5px rgb(78, 74, 74), 3px 3px 5px rgb(214, 208, 208);
 }
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit-user > label {
+  margin-top: 0.75rem;
+  padding: 0.25rem;
+}
 @media (max-width: 1150px) {
   .products {
     display: grid;
@@ -465,7 +481,26 @@ textarea {
     margin-right: auto;
     width: 50%;
   }
+  .user-profile > div > button {
+    width: 10vw;
+  }
 }
+@media (max-width: 600px) {
+  .products {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .hero-image > p {
+    width: 40vw;
+  }
+}
+
 @media (max-width: 450px) {
   .products {
     display: grid;
