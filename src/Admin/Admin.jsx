@@ -13,7 +13,7 @@ const Admin = () => {
       ) : (
         <>
           <h1 style={{ textTransform: "capitalize" }}>
-            Welcome {value.authName} to admin area
+            Welcome {value.authName}, to admin area
           </h1>
           <h2>You can edit description and price</h2>
           {value.products.map((product) => (
@@ -33,7 +33,6 @@ const Admin = () => {
                 >
                   edit
                 </button>
-                <hr />
               </div>
               {value.edit.id === product.id && value.edit.edit ? (
                 <div className={value.edit ? "change" : "hide"}>
@@ -63,6 +62,7 @@ const Admin = () => {
               ) : (
                 ""
               )}
+              <hr />
             </div>
           ))}
         </>

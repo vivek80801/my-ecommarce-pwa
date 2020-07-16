@@ -1,16 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ProductContext } from "../Context/Context";
+import UpdatedComponent from "../Hoc/loading";
 
-const AdminLogIn = () => {
+const AdminLogIn = ({loading}) => {
   const value = useContext(ProductContext);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    return () => {
-      setLoading(false);
-    };
-  }, [loading]);
 
   return (
     <React.Fragment>
@@ -62,4 +55,4 @@ const AdminLogIn = () => {
   );
 };
 
-export default AdminLogIn;
+export default UpdatedComponent(AdminLogIn);

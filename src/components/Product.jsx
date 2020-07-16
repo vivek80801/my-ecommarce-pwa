@@ -10,7 +10,7 @@ const Product = () => {
       {value.auth ? (
         <React.Fragment>
           <h1 style={{ textTransform: "capitalize" }}>
-            welcome {value.userName}
+            welcome {value.userName},
           </h1>
           <h2>
             Our <strong>Products</strong>{" "}

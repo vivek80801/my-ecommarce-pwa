@@ -127,10 +127,12 @@ export const ProductProvider = (props) => {
     if (id === change.id || id === changeDes.id) {
       products.forEach((product) => {
         if (id === product.id) {
-          if (!isNaN(change.price) && changeDes !== "") {
+          if (!isNaN(change.price)) {
             product.price = change.price;
             product.total = change.price;
-            product.des = changeDes.des;
+            if (changeDes !== "") {
+              product.des = changeDes.des;
+            }
           }
         }
       });
@@ -215,7 +217,7 @@ export const ProductProvider = (props) => {
     }
   };
   const handleSaveUser = () => {
-    setEdit(false)
+    setEdit(false);
   };
 
   return (
