@@ -54,3 +54,4 @@ You can check `dummyLogIn.js` for more information about users
 - [x] You can delete Products with in ypur cart
 - [x] You can Log in as Admin
 - [x] You can change price and description of products when you log in as Admin
+- [x] Users can edit profile
