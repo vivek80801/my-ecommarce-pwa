@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ReactDOM from "react-dom";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 
 const Admin = () => {
   const value = useContext(ProductContext);

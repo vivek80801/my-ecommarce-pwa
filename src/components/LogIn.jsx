@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 import loading from "../Hoc/loading";
 import Pwa from "./Pwa";
 
@@ -32,6 +32,7 @@ const LogIn = ({loading}) => {
                   onChange={value.handleUserName}
                   type="text"
                   name="username"
+                  data-testid="username"
                   autoComplete="current-password"
                   placeholder="Enter Your user name"
                 />{" "}
@@ -43,12 +44,13 @@ const LogIn = ({loading}) => {
                   onChange={value.handlePassword}
                   type="password"
                   name="password"
+                  data-testid="password"
                   autoComplete="current-password"
                   placeholder="Enter Your user password"
                 />{" "}
               </label>{" "}
               <br />
-              <input type="submit" value="Log In" title="log in" />
+              <input type="submit" data-testid="submit-btn" value="Log In" title="log in" />
             </form>
             <Link to="/createaccount" title="we don't save your data">
               <button className="btn" onClick={value.handleRedirect}>

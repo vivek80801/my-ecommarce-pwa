@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { ProductContext } from "./Context/Context";
+import { ProductContext } from "./context/Context";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
 import Default from "./components/Default";
@@ -11,6 +11,7 @@ import LogIn from "./components/LogIn";
 import CreateAccount from "./components/CreateAccount";
 import AdminLogIn from "./Admin/AdminLogIn";
 import Admin from "./Admin/Admin";
+import CheckOut from './components/CheckOut'
 import UsersProfile from "./users/UsersProfile";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/adminlogin">
           {value.adminAuth ? <Redirect to="/admin" /> : <AdminLogIn />}
         </Route>
+        <Route exact path="/checkout" component={CheckOut}/>
         <Route component={Default} />
       </Switch>
     </React.Fragment>

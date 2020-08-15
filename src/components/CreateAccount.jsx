@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 
 const CreateAccount = () => {
   const value = useContext(ProductContext);

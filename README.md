@@ -1,46 +1,65 @@
 # This is a dummy E-commerce PWA
 
-what is a `PWA` ?  PWA is a website 
-thats also works. when user gets offline. In this is dummy `E-commerce` website. I did not added slider. I did not added offers.
+what is a `PWA` ? PWA is a website
+thats also works. when user gets offline. In this is dummy `E-commerce` website.
 
 # Willing to work on this Project
 
-If you wish. we will make this dummy ecommerce site just for learning purposes. You can fork. 
+If you wish. we will make this dummy ecommerce site just for learning purposes. You can fork.
 
 # Tests
 
-For now, I am not plning to write test. 
+Some tests are written.
 
 # How to get Started
 
-Well clone this repo and run 
+Well clone this repo and run
 
-```bash
+```npm
 
-npm run install
+npm install
 
 ```
+
 To run the App run
 
-```bash
+```npm
 
 npm start
 
 ```
 
+## To test App
+
+Run
+
+```npm
+
+npm run test
+
+```
+
+## To build this App for production
+
+```npm
+
+npm run build
+
+```
+
 # Dummy Users
 
-UserName | Passwords | Role 
---| --| --|
-vivek | vivek | administrator
-root | root | administrator
-sohan | sohan | user
-rohan | rohan | user
-mohan | mohan | user
-mohit | mohit | user
-sona | sona | user
-mona | mona | user
-ram | ram | user
+| UserName | Passwords | Role          |
+| -------- | --------- | ------------- |
+| vivek    | vivek     | administrator |
+| root     | root      | administrator |
+| sohan    | sohan     | user          |
+| rohan    | rohan     | user          |
+| mohan    | mohan     | user          |
+| mohit    | mohit     | user          |
+| sona     | sona      | user          |
+| mona     | mona      | user          |
+| ram      | ram       | user          |
 
 You can check `dummyLogIn.js` for more information about users
 

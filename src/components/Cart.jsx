@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 import ThankYou from "./ThankYou";
 
 const Cart = () => {
@@ -45,6 +45,9 @@ const Cart = () => {
         >
           <Link to="/products">
             <button className="btn btn-fixed">Back</button>
+          </Link>
+          <Link to="/checkout">
+            <button className="btn btn-fixed">checkout</button>
           </Link>
         </div>
         <ThankYou />
@@ -96,7 +99,7 @@ const Cart = () => {
                       <button
                         className="btn"
                         onClick={() => value.handleDelete(product.id)}
-                        title="are you sure to delete?"
+                        title="do you want to delete?"
                       >
                         Delete
                       </button>

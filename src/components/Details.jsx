@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 
 const Details = (props) => {
   const value = useContext(ProductContext);

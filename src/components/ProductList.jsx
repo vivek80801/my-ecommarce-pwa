@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../Context/Context";
+import { ProductContext } from "../context/Context";
 import loading from "../Hoc/loading";
 
 const ProductList = ({ loading }) => {
