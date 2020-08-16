@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8a59118-6db8-43fe-bf29-a5d530006ecd/deploy-status)](https://app.netlify.com/sites/sleepy-pasteur-d58299/deploys)
+
+live example:[live example](https://vishavkarma-foods-ecommarce.netlify.app "example app")
+
 # This is a dummy E-commerce PWA
 
 what is a `PWA` ? PWA is a website
