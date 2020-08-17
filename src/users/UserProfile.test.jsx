@@ -2,8 +2,6 @@ import React from "react";
 import {
   render,
   cleanup,
-  fireEvent,
-  waitForDomChange,
 } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "../context/Context";
@@ -22,6 +20,6 @@ describe("Edit profile", () => {
     );
 
     getByText("Log In");
-    debug();
+    // debug();
   });
 });

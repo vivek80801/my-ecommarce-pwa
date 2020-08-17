@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/Context";
 import loading from "../Hoc/loading";
-import Pwa from "./Pwa";
 
-const LogIn = ({loading}) => {
+const LogIn = ({ loading }) => {
   const value = useContext(ProductContext);
 
   return (
@@ -16,7 +15,6 @@ const LogIn = ({loading}) => {
       ) : (
         <div className="contain">
           <div className="container">
-            <Pwa />
             <span
               style={{
                 color: "var(--lightRed)",
@@ -50,7 +48,12 @@ const LogIn = ({loading}) => {
                 />{" "}
               </label>{" "}
               <br />
-              <input type="submit" data-testid="submit-btn" value="Log In" title="log in" />
+              <input
+                type="submit"
+                data-testid="submit-btn"
+                value="Log In"
+                title="log in"
+              />
             </form>
             <Link to="/createaccount" title="we don't save your data">
               <button className="btn" onClick={value.handleRedirect}>

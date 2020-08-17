@@ -8,10 +8,10 @@ import {
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider } from "./context/Context";
+import { createMemoryHistory } from "history";
+cleanup();
 
-cleanup()
-
-it("log in text", () => {
+test("log in text", () => {
   const { getByText, debug } = render(
     <Router>
       <ProductProvider>
@@ -20,11 +20,11 @@ it("log in text", () => {
     </Router>
   );
   getByText("Log In Form");
-  debug();
+  // debug();
 });
 
 describe("Log into App", () => {
-  it("fill the form and click on submit button", () => {
+  test("fill the form and click on submit button", () => {
     const { getByTestId, getByText, debug } = render(
       <Router>
         <ProductProvider>
@@ -41,6 +41,21 @@ describe("Log into App", () => {
 
     fireEvent.click(getByText("Pay"));
     fireEvent.click(getByText("Log out"));
-    debug();
+    // debug();
+  });
+
+  test("should router work", () => {
+    const history = createMemoryHistory();
+    const { container, getByTestId, getByText, getAllByText, debug } = render(
+      <Router history={history}>
+        <ProductProvider>
+          <App />
+        </ProductProvider>
+      </Router>
+    );
+    const home = getAllByText(/^Home/gi)[0];
+    expect(container.innerHTML).toMatch("Home");
+    fireEvent.click(home);
+    // debug();
   });
 });
