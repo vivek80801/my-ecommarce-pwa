@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f8a59118-6db8-43fe-bf29-a5d530006ecd/deploy-status)](https://app.netlify.com/vishavkarma-foods-ecommarce.netlify.app )
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0e4acb8c-4945-4678-9d3e-9f8857d786c8/deploy-status)](https://app.netlify.com/sites/vishavkarma-foods-ecommarce/deploys)
 
 live example:[live example](https://vishavkarma-foods-ecommarce.netlify.app "example app")
 
