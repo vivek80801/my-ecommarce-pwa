@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { FaRupeeSign } from "react-icons/fa";
 import { ProductContext } from "../context/Context";
 import ThankYou from "./ThankYou";
 
@@ -11,7 +12,7 @@ const Cart = () => {
   let output = 0;
   value.ids.forEach((id) =>
     value.products.forEach((product) =>
-      product.id === id ? (output += product.total * product.count) : ""
+      product.id === id ? (output += product.total * product.count) : null
     )
   );
 
@@ -46,9 +47,6 @@ const Cart = () => {
           <Link to="/products">
             <button className="btn btn-fixed">Back</button>
           </Link>
-          <Link to="/checkout">
-            <button className="btn btn-fixed">checkout</button>
-          </Link>
         </div>
         <ThankYou />
         <div
@@ -82,7 +80,10 @@ const Cart = () => {
                   <React.Fragment key={uuidv4()}>
                     <div key={uuidv4()} className="cart-image">
                       <img src={product.img} alt={product.name} />
-                      <span>${product.price} </span>
+                      <span>
+                        <FaRupeeSign />
+                        {product.price}{" "}
+                      </span>
                       <span>{product.count}</span>
                       <button
                         className="btn"
@@ -104,14 +105,15 @@ const Cart = () => {
                         Delete
                       </button>
                       <span>
-                        ${" "}
+                        <FaRupeeSign />{" "}
                         {Math.floor(product.count * product.price * 100) / 100}
                       </span>
                     </div>
                     <div className="cart-image-mobile">
                       <img src={product.img} alt={product.name} />
                       <span className="center-spans">
-                        Price: ${product.price}{" "}
+                        Price: <FaRupeeSign />
+                        {product.price}{" "}
                       </span>
                       <span className="center-spans">
                         Number of items: {product.count}
@@ -137,15 +139,13 @@ const Cart = () => {
                       </button>
                       <span className="center-spans">
                         {" "}
-                        Total cost of {product.name}: ${" "}
+                        Total cost of {product.name}: <FaRupeeSign />{" "}
                         {Math.floor(product.count * product.price * 100) / 100}
                       </span>
                       <hr />
                     </div>
                   </React.Fragment>
-                ) : (
-                  ""
-                )
+                ) : null
               )}
             </React.Fragment>
           ))}
@@ -158,7 +158,9 @@ const Cart = () => {
             >
               Pay
             </button>
-            <h2>$ {Math.floor(output * 100) / 100}</h2>
+            <h2>
+              <FaRupeeSign /> {Math.floor(output * 100) / 100}
+            </h2>
           </div>
         </div>
       </React.Fragment>

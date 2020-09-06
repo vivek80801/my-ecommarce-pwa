@@ -16,6 +16,9 @@ const ThankYou = () => {
       <div className="model-pay-data">
         Thank You for visiting!
         <br />
+        <a href="https://github.com/vivek80801/my-ecommarce-pwa.git/">
+          Give Star On Github
+        </a>
         <Link to="/">
           <button
             className="btn"

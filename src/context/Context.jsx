@@ -12,20 +12,20 @@ export const ProductProvider = (props) => {
   const [auth, setAuth] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [modelUserInfo, setModeUserInfo] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [newUserName, setNewUserName] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [newEmail, setNewEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [userName, setUserName] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [newUserName, setNewUserName] = useState(null);
+  const [newPassword, setNewPassword] = useState(null);
+  const [newEmail, setNewEmail] = useState(null);
+  const [message, setMessage] = useState(null);
   const [isRotated, SetIsrotated] = useState(false);
   const [change, setChange] = useState(0);
-  const [changeDes, setChangeDes] = useState("");
+  const [changeDes, setChangeDes] = useState(null);
   const [edit, setEdit] = useState(false);
   const [adminAuth, setAdminAuth] = useState(false);
-  const [authName, setAuthName] = useState("");
-  const [authPassword, setAuthPassword] = useState("");
+  const [authName, setAuthName] = useState(null);
+  const [authPassword, setAuthPassword] = useState(null);
 
   const handleAddToCart = (slug) => {
     products.forEach((i) => {
@@ -72,34 +72,41 @@ export const ProductProvider = (props) => {
   };
   const handleLogIn = (e) => {
     e.preventDefault();
-    setMessage("");
+    setMessage(null);
     persons.map((person) =>
-      person.name === userName && person.password === password
-        ? setAuth(true)
-        : setMessage("You have enter wrong email password")
+      userName !== null && password !== null
+        ? person.name.toLocaleLowerCase() === userName.toLocaleLowerCase() &&
+          person.password.toLocaleLowerCase() === password.toLocaleLowerCase()
+          ? setAuth(true)
+          : setMessage("You have enter wrong email password")
+        : setMessage("Please fill th form.")
     );
-    if (newUserName !== "" && newPassword !== "") {
-      newUserName === userName && newPassword === password
+    newUserName !== null && newPassword !== null
+      ? newUserName === userName && newPassword === password
         ? setAuth(true)
-        : setMessage("You have enter wrong email or password");
-    }
+        : setMessage("You have enter wrong email or password")
+      : setMessage("Please fill the form");
     persons.map((person) =>
-      person.name === userName ? setEmail(person.email) : ""
+      person.name === userName ? setEmail(person.email) : null
     );
     setTimeout(() => {
-      setMessage("");
+      setMessage(null);
     }, 2500);
   };
   const handleAdmin = (e) => {
     e.preventDefault();
-    setMessage("");
+    setMessage(null);
     admins.map((admin) =>
-      admin.name === authName && admin.password === authPassword
-        ? setAdminAuth(true)
-        : setMessage("You are not an admin")
+      authName !== null && authPassword !== null
+        ? admin.name.toLocaleLowerCase() === authName.toLocaleLowerCase() &&
+          admin.password.toLocaleLowerCase() ===
+            authPassword.toLocaleLowerCase()
+          ? setAdminAuth(true)
+          : setMessage("You are not an admin")
+        : setMessage("Please fill the form.")
     );
     setTimeout(() => {
-      setMessage("");
+      setMessage(null);
     }, 500);
   };
   const handleAuthName = (e) => {
@@ -130,7 +137,7 @@ export const ProductProvider = (props) => {
           if (!isNaN(change.price)) {
             product.price = change.price;
             product.total = change.price;
-            if (changeDes !== "") {
+            if (changeDes !== null) {
               product.des = changeDes.des;
             }
           }
@@ -152,27 +159,26 @@ export const ProductProvider = (props) => {
 
   const handleCreateAccount = (e) => {
     e.preventDefault();
-    setMessage("");
+    setMessage();
     const person = {
       name: newUserName,
       password: newPassword,
       email: newEmail,
     };
-    if (person.name === "" || person.email === "" || person.password === "") {
-      setMessage("Please fill the form");
-    } else if (person.name.length <= 3) {
-      setMessage("UserNme must be of 4 charecters");
-    } else if (person.name.length >= 20) {
-      setMessage("UserName can not exeeds 20 charecters");
-    } else if (person.password.length <= 8) {
-      setMessage("Password must be of 8 charecters");
-    } else if (person.password.length >= 15) {
-      setMessage("Password can not exeeds 15 charecters");
-    } else {
-      setRedirect(true);
-    }
+    person.name === null || person.email === null || person.password === null
+      ? setMessage("Please fill the form")
+      : person.name.length <= 3
+      ? setMessage("username must be of 4 charecters")
+      : person.name.length >= 20
+      ? setMessage("username can not exeeds 20 charecters")
+      : person.password.length <= 8
+      ? setMessage("Password must be of 8 charecters")
+      : person.password.length >= 15
+      ? setMessage("Password can not exeeds 15 charecters")
+      : setRedirect(true);
+
     setTimeout(() => {
-      setMessage("");
+      setMessage(null);
     }, 3000);
   };
 
@@ -186,13 +192,13 @@ export const ProductProvider = (props) => {
 
   const handleLogout = () => {
     setMessage("You are logged out");
-    setUserName("");
-    setPassword("");
+    setUserName(null);
+    setPassword(null);
     setAdminAuth(false);
     setIds([]);
     setAuth(!auth);
     setTimeout(() => {
-      setMessage("");
+      setMessage(null);
     }, 2500);
   };
 
@@ -212,7 +218,7 @@ export const ProductProvider = (props) => {
     SetIsrotated(!isRotated);
   };
   const handleUserEmail = (e) => {
-    if (e.target.value !== "") {
+    if (e.target.value !== null) {
       setEmail(e.target.value);
     }
   };

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const loading = (WrappedComponent) => {
   const Loading = () => {
     const [loading, setLoading] = useState(false);
-
     useEffect(() => {
       setLoading(true);
       return () => {

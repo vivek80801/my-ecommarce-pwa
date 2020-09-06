@@ -11,8 +11,8 @@ import LogIn from "./components/LogIn";
 import CreateAccount from "./components/CreateAccount";
 import AdminLogIn from "./Admin/AdminLogIn";
 import Admin from "./Admin/Admin";
-import CheckOut from "./components/CheckOut";
 import UsersProfile from "./users/UsersProfile";
+import About from "./components/About";
 
 function App() {
   const value = useContext(ProductContext);
@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/adminlogin">
           {value.adminAuth ? <Redirect to="/admin" /> : <AdminLogIn />}
         </Route>
-        <Route exact path="/checkout" component={CheckOut} />
+        <Route exact path="/about" component={About} />
         <Route component={Default} />
       </Switch>
     </React.Fragment>

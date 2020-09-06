@@ -11,34 +11,43 @@ import { ProductProvider } from "./context/Context";
 import { createMemoryHistory } from "history";
 cleanup();
 
-test("log in text", () => {
-  const { getByText, debug } = render(
-    <Router>
-      <ProductProvider>
-        <App />
-      </ProductProvider>
-    </Router>
-  );
-  getByText("Log In Form");
-  // debug();
-});
-
-describe("Log into App", () => {
-  test("fill the form and click on submit button", () => {
-    const { getByTestId, getByText, debug } = render(
+describe("<App/>", () => {
+  test("should render wuithout crashing", () => {
+    const { getByText, debug } = render(
       <Router>
         <ProductProvider>
           <App />
         </ProductProvider>
       </Router>
     );
+    getByText("Log In Form");
+    // debug();
+  });
+
+  test("fill the form and click on submit button", () => {
+    const { getByTestId, getByText, getAllByText, debug } = render(
+      <Router>
+        <ProductProvider>
+          <App />
+        </ProductProvider>
+      </Router>
+    );
+
     fireEvent.change(getByTestId("username"), { target: { value: "vivek" } });
     fireEvent.change(getByTestId("password"), { target: { value: "vivek" } });
     fireEvent.click(getByTestId("submit-btn"));
     waitForDomChange();
+    // const adminNodes = getAllByText("Admin");
+    // const adminElements = [...adminNodes];
+    // fireEvent.click(adminElements[1]);
+    // fireEvent.change(getByTestId("adminname"), { target: { value: "vivek" } });
+    // fireEvent.change(getByTestId("adminpassword"), {
+    //   target: { value: "vivek" },
+    // });
+    // fireEvent.click(getByTestId("adminlogin"));
+    // waitForDomChange()
     fireEvent.click(getByText("Pasta1"));
     fireEvent.click(getByText("Add to Cart"));
-
     fireEvent.click(getByText("Pay"));
     fireEvent.click(getByText("Log out"));
     // debug();

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/Context";
 import loading from "../Hoc/loading";
+import {FaUserPlus } from "react-icons/fa"
 
 const LogIn = ({ loading }) => {
   const value = useContext(ProductContext);
@@ -22,7 +23,7 @@ const LogIn = ({ loading }) => {
             >
               {value.message}
             </span>
-            <h1>Log In Form</h1>
+            <h1>Log In Form<FaUserPlus/></h1>
             <form onSubmit={value.handleLogIn}>
               <label htmlFor="UserName">
                 <span>UserName:</span>

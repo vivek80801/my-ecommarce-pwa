@@ -15,6 +15,7 @@
 }
 body {
   background-color: var(--mainWhite);
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
   z-index: 2;
@@ -431,6 +432,21 @@ textarea {
 .edit-user > label {
   margin-top: 0.75rem;
   padding: 0.25rem;
+}
+.about img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  padding: 0.75rem;
+  box-shadow: -3px -3px 5px rgb(78, 74, 74), 3px 3px 5px rgb(197, 183, 183);
+}
+.about h1 {
+  text-transform: capitalize;
+  border-bottom: 4px dashed #00f;
+  margin-bottom: 1.25rem;
+}
+.about-details{
+  padding: 0.75rem;
 }
 @media (max-width: 1150px) {
   .products {
