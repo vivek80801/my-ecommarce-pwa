@@ -1,8 +1,9 @@
 name: Test the app
 
 
-on: pull_request:
-  branches: [ master ]
+on:
+  pull_request:
+    branches: [ master ]
 
 
 jobs:
