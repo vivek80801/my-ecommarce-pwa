@@ -13,7 +13,7 @@ cleanup();
 
 describe("<App/>", () => {
   test("should render wuithout crashing", () => {
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <Router>
         <ProductProvider>
           <App />
@@ -25,7 +25,7 @@ describe("<App/>", () => {
   });
 
   test("fill the form and click on submit button", () => {
-    const { getByTestId, getByText, getAllByText, debug } = render(
+    const { getByTestId, getByText, } = render(
       <Router>
         <ProductProvider>
           <App />
@@ -55,7 +55,7 @@ describe("<App/>", () => {
 
   test("should router work", () => {
     const history = createMemoryHistory();
-    const { container, getByTestId, getByText, getAllByText, debug } = render(
+    const { container,  getAllByText, } = render(
       <Router history={history}>
         <ProductProvider>
           <App />
