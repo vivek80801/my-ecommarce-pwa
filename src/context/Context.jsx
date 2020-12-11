@@ -35,11 +35,13 @@ export const ProductProvider = (props) => {
       }
     });
   };
+
   const handleAddCount = (id) => {
     const find = products.filter((product) => product.id === id);
     find[0].count += 1;
     setProducts([...products]);
   };
+
   const handleRemoveCount = (id) => {
     const find = products.filter((product) => product.id === id);
     if (find[0].count > 1) {
@@ -49,6 +51,7 @@ export const ProductProvider = (props) => {
     }
     setProducts([...products]);
   };
+
   const handleDelete = (id) => {
     const ids1 = [...ids];
     const find = ids1.filter((i) => i !== id);
@@ -58,18 +61,23 @@ export const ProductProvider = (props) => {
   const handleUserName = (e) => {
     setUserName(e.target.value);
   };
+
   const handleNewUserName = (e) => {
     setNewUserName(e.target.value);
   };
+
   const handleNewEmail = (e) => {
     setNewEmail(e.target.value);
   };
+
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
   const handleNewPassword = (e) => {
     setNewPassword(e.target.value);
   };
+
   const handleLogIn = (e) => {
     e.preventDefault();
     setMessage(null);
@@ -93,6 +101,7 @@ export const ProductProvider = (props) => {
       setMessage(null);
     }, 2500);
   };
+
   const handleAdmin = (e) => {
     e.preventDefault();
     setMessage(null);
@@ -109,9 +118,11 @@ export const ProductProvider = (props) => {
       setMessage(null);
     }, 500);
   };
+
   const handleAuthName = (e) => {
     setAuthName(e.target.value);
   };
+  
   const handleAuthPassword = (e) => {
     setAuthPassword(e.target.value);
   };

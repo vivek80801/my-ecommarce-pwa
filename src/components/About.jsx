@@ -6,7 +6,7 @@ const About = () => {
     <div className="contain">
       <div className="container about">
         <h1>about me</h1>
-        <img src="./img/github-avtar.svg" alt="phofi" />
+        <img src="./img/github-avtar.png" alt="about me" />
         <div className="about-details">
           <p>
             Hello, I am vivek. I am a front-end developer. I make websites which

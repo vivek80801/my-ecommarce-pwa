@@ -40,7 +40,6 @@ const UsersProfile = () => {
         </>
       ) : (
         <>
-          {" "}
           <h1>
             You are not logged in.
             <Link to="/">

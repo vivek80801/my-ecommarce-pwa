@@ -55,7 +55,7 @@ describe("<App/>", () => {
 
   test("should router work", () => {
     const history = createMemoryHistory();
-    const { container,  getAllByText, } = render(
+    const { container,  getAllByText,} = render(
       <Router history={history}>
         <ProductProvider>
           <App />
