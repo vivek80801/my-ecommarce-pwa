@@ -23,7 +23,7 @@ const ProductList = ({ loading }) => {
                   <h1>{i.name}</h1>
                   <span>
                     Price: <FaRupeeSign />
-                    {i.price}{" "}
+                    {i.price}
                   </span>
                 </div>
               </Link>

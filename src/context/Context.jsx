@@ -169,13 +169,13 @@ export const ProductProvider = (props) => {
   };
 
   const handleCreateAccount = (e) => {
-    e.preventDefault();
-    setMessage();
     const person = {
       name: newUserName,
       password: newPassword,
       email: newEmail,
     };
+    e.preventDefault();
+    setMessage();
     person.name === null || person.email === null || person.password === null
       ? setMessage("Please fill the form")
       : person.name.length <= 3

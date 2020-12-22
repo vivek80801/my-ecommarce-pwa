@@ -34,8 +34,8 @@ const LogIn = ({ loading }) => {
                   data-testid="username"
                   autoComplete="current-password"
                   placeholder="Enter Your user name"
-                />{" "}
-              </label>{" "}
+                />
+              </label>
               <br />
               <label htmlFor="Password">
                 <span>Password: </span>
@@ -46,8 +46,8 @@ const LogIn = ({ loading }) => {
                   data-testid="password"
                   autoComplete="current-password"
                   placeholder="Enter Your user password"
-                />{" "}
-              </label>{" "}
+                />
+              </label>
               <br />
               <input
                 type="submit"

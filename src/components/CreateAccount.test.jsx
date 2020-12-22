@@ -6,8 +6,8 @@ import CreateAccount from "./CreateAccount";
 
 cleanup();
 
-describe("yghg", () => {
-  test("should ", () => {
+describe("Create Account tests", () => {
+  test("Create Account should be render", () => {
     const { getByText } = render(
       <Router>
         <ProductProvider>
@@ -15,7 +15,7 @@ describe("yghg", () => {
         </ProductProvider>
       </Router>
     );
-    expect(getByText(/^UserName:/).textContent).toBe("UserName: ");
+    expect(getByText(/^UserName:/).textContent).toBe("UserName:");
     // debug();
   });
 });

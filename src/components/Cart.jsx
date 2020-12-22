@@ -82,7 +82,7 @@ const Cart = () => {
                       <img src={product.img} alt={product.name} />
                       <span>
                         <FaRupeeSign />
-                        {product.price}{" "}
+                        {product.price}
                       </span>
                       <span>{product.count}</span>
                       <button
@@ -105,7 +105,7 @@ const Cart = () => {
                         Delete
                       </button>
                       <span>
-                        <FaRupeeSign />{" "}
+                        <FaRupeeSign />
                         {Math.floor(product.count * product.price * 100) / 100}
                       </span>
                     </div>
@@ -113,7 +113,7 @@ const Cart = () => {
                       <img src={product.img} alt={product.name} />
                       <span className="center-spans">
                         Price: <FaRupeeSign />
-                        {product.price}{" "}
+                        {product.price}
                       </span>
                       <span className="center-spans">
                         Number of items: {product.count}
@@ -138,8 +138,8 @@ const Cart = () => {
                         Delete
                       </button>
                       <span className="center-spans">
-                        {" "}
-                        Total cost of {product.name}: <FaRupeeSign />{" "}
+                        
+                        Total cost of {product.name}: <FaRupeeSign />
                         {Math.floor(product.count * product.price * 100) / 100}
                       </span>
                       <hr />

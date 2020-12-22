@@ -5,8 +5,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import LogIn from "./LogIn";
 
 cleanup();
-describe("9ii", () => {
-    test("should ", () => {
+describe("LogIn tests", () => {
+    test("should be render", () => {
       const { getByText,  } = render(
         <Router>
           <ProductProvider>

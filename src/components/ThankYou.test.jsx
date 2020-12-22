@@ -14,7 +14,7 @@ describe("9ii", () => {
           </ProductProvider>
         </Router>
       );
-      expect(getByText(/^Thank/).textContent).toBe("Thank You for visiting! Give Star On Github Log out");
+      expect(getByText(/^Thank/).textContent).toBe("Thank You for visiting!Give Star On GithubLog out");
       // debug();
     });
   });

@@ -13,7 +13,7 @@ const Product = () => {
             welcome {value.userName.toLocaleLowerCase()}.
           </h1>
           <h2>
-            Our <strong>Products</strong>{" "}
+            Our <strong>Products</strong>
           </h2>
           <div className="products">
             <ProductList />

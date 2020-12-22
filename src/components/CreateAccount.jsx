@@ -8,6 +8,13 @@ const CreateAccount = () => {
     <React.Fragment>
       <div className="contain">
         <div className="container">
+          <span
+            style={{
+              color: "var(--lightRed)",
+            }}
+          >
+            {value.message}
+          </span>
           <h1>Create Account</h1>
           <form onSubmit={value.handleCreateAccount}>
             <label htmlFor="UserName">
@@ -18,8 +25,8 @@ const CreateAccount = () => {
                 name="username"
                 autoComplete="current-password"
                 placeholder="Enter Your user name"
-              />{" "}
-            </label>{" "}
+              />
+            </label>
             <br />
             <label htmlFor="Email">
               Email:
@@ -29,30 +36,23 @@ const CreateAccount = () => {
                 name="username"
                 autoComplete="current-password"
                 placeholder="Enter Your email address"
-              />{" "}
-            </label>{" "}
+              />
+            </label>
             <br />
             <label htmlFor="Password">
-              Password:{" "}
+              Password:
               <input
                 onChange={value.handleNewPassword}
                 type="password"
                 name="password"
                 autoComplete="current-password"
                 placeholder="Enter Your user password"
-              />{" "}
-            </label>{" "}
+              />
+            </label>
             <br />
             {value.renderRedirect()}
             <input type="submit" value="Sign Up" />
           </form>
-          <span
-            style={{
-              color: "var(--lightRed)",
-            }}
-          >
-            {value.message}
-          </span>
         </div>
       </div>
     </React.Fragment>

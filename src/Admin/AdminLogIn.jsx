@@ -32,8 +32,8 @@ const AdminLogIn = ({loading}) => {
                   data-testid="adminname"
                   placeholder="Enter Your admin name"
                   onChange={value.handleAuthName}
-                />{" "}
-              </label>{" "}
+                />
+              </label>
               <br />
               <label htmlFor="Password">
                 <span>Password: </span>
@@ -44,8 +44,8 @@ const AdminLogIn = ({loading}) => {
                   autoComplete="current-password"
                   placeholder="Enter Your password"
                   onChange={value.handleAuthPassword}
-                />{" "}
-              </label>{" "}
+                />
+              </label>
               <br />
               <input type="submit" data-testid="adminlogin" value="Admin Log In" title="admin log in" />
             </form>

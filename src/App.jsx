@@ -9,12 +9,12 @@ import Details from "./components/Details";
 import Cart from "./components/Cart";
 import LogIn from "./components/LogIn";
 import CreateAccount from "./components/CreateAccount";
+import UsersProfile from "./users/UsersProfile";
 import AdminLogIn from "./Admin/AdminLogIn";
 import Admin from "./Admin/Admin";
-import UsersProfile from "./users/UsersProfile";
 import About from "./components/About";
 
-function App() {
+const App = () => {
   const value = useContext(ProductContext);
   return (
     <React.Fragment>

@@ -37,14 +37,14 @@ const Admin = () => {
               {value.edit.id === product.id && value.edit.edit ? (
                 <div className={value.edit ? "change" : "hide"}>
                   <label htmlFor="price">
-                    price: ${" "}
+                    price: $
                     <input
                       type="number"
                       onChange={(e) => value.handleEditPrice(product.id, e)}
                     />
-                  </label>{" "}
+                  </label>
                   <label htmlFor="des">
-                    description:{" "}
+                    description:
                     <textarea
                       name="descirption"
                       cols="30"

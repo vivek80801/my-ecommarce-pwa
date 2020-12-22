@@ -11,7 +11,7 @@ const UsersProfile = () => {
           <h1>My Profile</h1>
           <div className="user-profile">
             <span> Name: {value.userName}</span>
-            <span>Email: {value.email}</span>
+            <span> Email: {value.email}</span>
             <span> Password: {value.password}</span>
             <div>
               <button
@@ -30,7 +30,7 @@ const UsersProfile = () => {
               Email: <input type="email" onChange={value.handleUserEmail} />
             </label>
             <label htmlFor="password">
-              Password:{" "}
+              Password:
               <input type="password" onChange={value.handlePassword} />
             </label>
             <button className="btn" onClick={value.handleSaveUser}>
