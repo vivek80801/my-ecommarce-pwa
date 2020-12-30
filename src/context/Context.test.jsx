@@ -1,5 +1,5 @@
 import React from "react";
-import  { ProductContext, ProductProvider } from "./Context";
+import { ProductContext, ProductProvider } from "./Context";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
@@ -12,7 +12,7 @@ describe("test initioal states", () => {
         </ProductContext.Consumer>
       </ProductProvider>
     );
-    expect(getByText(/^auth/).textContent).toBe("auth:false")
+    expect(getByText(/^auth/).textContent).toBe("auth:false");
     // debug();
   });
 });

@@ -4,7 +4,8 @@ export const admins = [
     name: "vivek",
     password: "vivek",
     email: "vivek@gmail.com",
-  },  {
+  },
+  {
     id: 2,
     name: "root",
     password: "root",

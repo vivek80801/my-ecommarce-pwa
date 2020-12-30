@@ -25,7 +25,7 @@ describe("<App/>", () => {
   });
 
   test("fill the form and click on submit button", () => {
-    const { getByTestId, getByText, } = render(
+    const { getByTestId, getByText } = render(
       <Router>
         <ProductProvider>
           <App />
@@ -55,7 +55,7 @@ describe("<App/>", () => {
 
   test("should router work", () => {
     const history = createMemoryHistory();
-    const { container,  getAllByText,} = render(
+    const { container, getAllByText } = render(
       <Router history={history}>
         <ProductProvider>
           <App />

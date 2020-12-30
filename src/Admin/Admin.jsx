@@ -59,9 +59,7 @@ const Admin = () => {
                     Save
                   </button>
                 </div>
-              ) : (
-                null
-              )}
+              ) : null}
               <hr />
             </div>
           ))}

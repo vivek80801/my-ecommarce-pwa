@@ -122,7 +122,7 @@ export const ProductProvider = (props) => {
   const handleAuthName = (e) => {
     setAuthName(e.target.value);
   };
-  
+
   const handleAuthPassword = (e) => {
     setAuthPassword(e.target.value);
   };
@@ -187,7 +187,6 @@ export const ProductProvider = (props) => {
       : person.password.length >= 15
       ? setMessage("Password can not exeeds 15 charecters")
       : setRedirect(true);
-
     setTimeout(() => {
       setMessage(null);
     }, 3000);

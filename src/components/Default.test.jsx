@@ -6,16 +6,15 @@ import Default from "./Default";
 
 cleanup();
 describe("9ii", () => {
-    test("should ", () => {
-      const { getByText } = render(
-        <Router>
-          <ProductProvider>
-            <Default />
-          </ProductProvider>
-        </Router>
-      );
-      expect(getByText(/^Page/).textContent).toBe("Page not found");
-      // debug();
-    });
+  test("should ", () => {
+    const { getByText } = render(
+      <Router>
+        <ProductProvider>
+          <Default />
+        </ProductProvider>
+      </Router>
+    );
+    expect(getByText(/^Page/).textContent).toBe("Page not found");
+    // debug();
   });
-  
+});

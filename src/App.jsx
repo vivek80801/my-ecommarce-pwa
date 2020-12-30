@@ -37,6 +37,6 @@ const App = () => {
       </Switch>
     </React.Fragment>
   );
-}
+};
 
 export default App;

@@ -138,7 +138,6 @@ const Cart = () => {
                         Delete
                       </button>
                       <span className="center-spans">
-                        
                         Total cost of {product.name}: <FaRupeeSign />
                         {Math.floor(product.count * product.price * 100) / 100}
                       </span>

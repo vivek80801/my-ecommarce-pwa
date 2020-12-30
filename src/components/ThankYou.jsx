@@ -17,7 +17,6 @@ const ThankYou = () => {
         Thank You for visiting!
         <br />
         <a href="https://github.com/vivek80801/my-ecommarce-pwa.git/">
-          
           Give Star On Github
         </a>
         <Link to="/">

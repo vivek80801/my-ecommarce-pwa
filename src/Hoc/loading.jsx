@@ -10,7 +10,7 @@ const loading = (WrappedComponent) => {
       };
     }, [loading]);
 
-    return <WrappedComponent loading={loading}/>;
+    return <WrappedComponent loading={loading} />;
   };
   return Loading;
 };

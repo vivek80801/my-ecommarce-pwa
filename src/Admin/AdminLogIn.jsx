@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/Context";
 import UpdatedComponent from "../Hoc/loading";
 
-const AdminLogIn = ({loading}) => {
+const AdminLogIn = ({ loading }) => {
   const value = useContext(ProductContext);
 
   return (
@@ -47,7 +47,12 @@ const AdminLogIn = ({loading}) => {
                 />
               </label>
               <br />
-              <input type="submit" data-testid="adminlogin" value="Admin Log In" title="admin log in" />
+              <input
+                type="submit"
+                data-testid="adminlogin"
+                value="Admin Log In"
+                title="admin log in"
+              />
             </form>
           </div>
         </div>

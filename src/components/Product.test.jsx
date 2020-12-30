@@ -6,16 +6,17 @@ import ThankYou from "./ThankYou";
 
 cleanup();
 describe("9ii", () => {
-    test("should ", () => {
-      const { getByText } = render(
-        <Router>
-          <ProductProvider>
-            <ThankYou />
-          </ProductProvider>
-        </Router>
-      );
-      expect(getByText(/^Thank/).textContent).toBe("Thank You for visiting!Give Star On GithubLog out");
-      // debug();
-    });
+  test("should ", () => {
+    const { getByText } = render(
+      <Router>
+        <ProductProvider>
+          <ThankYou />
+        </ProductProvider>
+      </Router>
+    );
+    expect(getByText(/^Thank/).textContent).toBe(
+      "Thank You for visiting!Give Star On GithubLog out"
+    );
+    // debug();
   });
-  
+});

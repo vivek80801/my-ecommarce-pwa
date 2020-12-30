@@ -25,9 +25,7 @@ const Details = (props) => {
               </Link>
             </div>
           </React.Fragment>
-        ) : (
-          null
-        )
+        ) : null
       )}
     </React.Fragment>
   );
