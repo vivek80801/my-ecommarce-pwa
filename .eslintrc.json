@@ -20,7 +20,7 @@
         "prettier/prettier"
     ],
     "rules": {
-        "semi":"warn",
-        "prettier/prettier":"warn"
+        "semi":"error",
+        "prettier/prettier":"error"
     }
 }
